@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>HTML</title>
+  <meta name="author" content="Karen" />
+  <!-- Date: 2013-09-16 -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+  <script>
+  $(document).ready( function () {
+    $('.a').click(function() {
+      if( $(this).position().left == 0){
+        $(this).css('left' , '200px');
+        $('.b').css('left', '0px');
+      } else {
+        $(this).css('left' , '0px');
+        $('.b').css('left', '200px');
+      }
+    });
+    $('.b').click(function() {
+      if( $(this).position().left == 200){
+        $(this).css('left' , '0px');
+        $('.a').css('left', '200px');
+      } else {
+        $(this).css('left' , '200px');
+        $('.a').css('left', '0px');
+      }
+    });
+  });
+  </script>
+  <style>
+    .block {
+      display: block;
+      width: 100px;
+      height: 100px;
+      color: white;
+      text-align: center;
+      cursor: pointer;
+      position: absolute;
+      top: 0px;
+    }
+    .a {
+      background: red;
+      left: 0px;
+    }
+    .b {
+      background: green;
+      left: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="block a">A</div>
+  <div class="block b">B</div>
+</body>
+</html>
+
